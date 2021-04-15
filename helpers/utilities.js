@@ -25,4 +25,16 @@ utilities.hash = (str) => {
     return false;
 }
 
+utilities.randomStringGenerator = (strLength) => {
+    if (typeof (strLength) === 'number' && strLength > 0) {
+        const allCharacter = 'qwertyuioplkjhgfdsazxcvbnm0123456789';
+        let randomString = '';
+        for (let i = 0; i < strLength; i++) {
+            randomString += allCharacter.charAt(Math.floor(Math.random() * allCharacter.length));
+        }
+        return randomString;
+    }
+    return false;
+}
+
 module.exports = utilities;
